@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Extract Year of Birth from NIC</title>
+</head>
+<body>
+
+<script>
+// Function to extract the year of birth from the NIC number
+function extractYearOfBirth(nic) {
+  // Assuming NIC format is "YYMMDDXXXXC"
+  if (nic.length >= 2) {
+    var year = "19" + nic.substring(0, 2); // Assuming it's 1900s
+    return year;
+  } else {
+    return "Invalid NIC format. Please enter a valid NIC number.";
+  }
+}
+
+// Prompt box to get the NIC number from the user
+var nicInput = prompt("Enter the student's NIC number (format: YYMMDDXXXXC):");
+
+// Check if the input is valid (not empty)
+if (nicInput) {
+  var yearOfBirth = extractYearOfBirth(nicInput);
+  alert("The year of birth is: " + yearOfBirth);
+} else {
+  alert("Invalid input. Please enter a valid NIC number.");
+}
+</script>
+
+</body>
+</html>

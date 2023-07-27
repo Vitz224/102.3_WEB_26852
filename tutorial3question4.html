@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mathematical Operations</title>
+</head>
+<body>
+
+<script>
+// Function to calculate the area of a circle
+function calculateCircleArea(radius) {
+  return (22 / 7) * radius * radius;
+}
+
+// Function to perform mathematical operations
+function performMathOperations() {
+  // Prompt box to get the first number from the user
+  var num1 = parseFloat(prompt("Enter the first number:"));
+
+  // Prompt box to get the second number from the user
+  var num2 = parseFloat(prompt("Enter the second number:"));
+
+  // Check if the inputs are valid (not NaN)
+  if (isNaN(num1) || isNaN(num2)) {
+    alert("Invalid input. Please enter valid numbers.");
+    return;
+  }
+
+  // Perform the mathematical operations
+  var addition = num1 + num2;
+  var subtraction = num1 - num2;
+  var multiplication = num1 * num2;
+  var division = num1 / num2;
+
+  // Calculate the area of a circle using the first number as the radius
+  var circleArea = calculateCircleArea(num1);
+
+  // Display the results in an alert box
+  alert("Addition: " + addition.toFixed(2) +
+        "\nSubtraction: " + subtraction.toFixed(2) +
+        "\nMultiplication: " + multiplication.toFixed(2) +
+        "\nDivision: " + division.toFixed(2) +
+        "\nArea of Circle (πr^2): " + circleArea.toFixed(2));
+}
+
+// Call the function to perform mathematical operations when the page is loaded
+performMathOperations();
+</script>
+
+</body>
+</html>
