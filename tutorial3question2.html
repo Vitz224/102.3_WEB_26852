@@ -1,0 +1,47 @@
+
+<html>
+<head>
+  <title>Grade Calculator</title>
+</head>
+<body>
+  <h1>Grade Calculator</h1>
+  <label>Enter Marks 1:</label>
+  <input type="number" id="mark1" /><br>
+  <label>Enter Marks 2:</label>
+  <input type="number" id="mark2" /><br>
+  <label>Enter Marks 3:</label>
+  <input type="number" id="mark3" /><br>
+  <label>Enter Marks 4:</label>
+  <input type="number" id="mark4" /><br>
+  <label>Enter Marks 5:</label>
+  <input type="number" id="mark5" /><br>
+  <button onclick="calculateGrades()">Calculate Grades</button>
+  <div id="output"></div>
+
+  <script>
+    function calculateGrades() {
+      // Get marks from the user
+      const mark1 = parseFloat(document.getElementById("mark1").value);
+      const mark2 = parseFloat(document.getElementById("mark2").value);
+      const mark3 = parseFloat(document.getElementById("mark3").value);
+      const mark4 = parseFloat(document.getElementById("mark4").value);
+      const mark5 = parseFloat(document.getElementById("mark5").value);
+
+      // Calculate total and average
+      const total = mark1 + mark2 + mark3 + mark4 + mark5;
+      const average = total / 5;
+
+      // Display the output
+      const outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = `<p>Total Marks: ${total}</p><p>Average Marks: ${average.toFixed(2)}</p>`;
+
+      // Check average and display the appropriate message
+      if (average > 30) {
+        alert("Congrats! You Passed");
+      } else {
+        alert("Better luck next time");
+      }
+    }
+  </script>
+</body>
+</html>
